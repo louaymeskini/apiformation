@@ -43,11 +43,12 @@ Router.post("/ajouter", function (req, res) {
 })
 
 //modifier admin
-Router.put("/modifier/:id", validateUser, function (req, res) {
+Router.put("/modifier/:id", function (req, res) {
+    // console.log(req.body);
     adminModel.findOne({_id: req.params.id}, function (err, result) {
-
+        // return res.send(result);
         if (bcrypt.compareSync(req.body.password, result.password)) {
-            // return res.send("true");
+
             if (req.body.newPassword === req.body.confirmPassword && req.body.newPassword !=="") {
 
                 adminModel.updateOne({_id: req.params.id}, {
@@ -55,12 +56,12 @@ Router.put("/modifier/:id", validateUser, function (req, res) {
                     prenom: req.body.prenom,
                     email: req.body.email,
                     username: req.body.username,
-                    password: bcrypt.hashSync(req.body.newPassword, saltRounds)
+                    password: bcrypt.hashSync(req.body.password, saltRounds)
                 }, function (err) {
                     if (err)
                         res.send({"state": "not ok", "msg": "err:" + err});
                     else
-                        res.send({"state": "ok", "msg": "update:"});
+                        res.send({"state": "ok", "msg": "updddate:"});
                 })
             }
             else if (req.body.newPassword !== req.body.confirmPassword){
@@ -84,6 +85,18 @@ Router.put("/modifier/:id", validateUser, function (req, res) {
         else {
             res.send({"state": "not ok", "msg": "password incorrecte:"})
         }
+    })
+
+})
+
+//modifier admin
+Router.put("/modif/:id", validateUser, function (req,res) {
+    adminModel.updateOne({_id:req.params.id}, {nom: req.body.nom, prenom: req.body.prenom,
+        email: req.body.email, username: req.body.username, password: bcrypt.hashSync(req.body.password,saltRounds)}, function (err) {
+        if(err)
+            res.send({"state":"not ok","msg":"err:"+err});
+        else
+            res.send({"state":"ok","msg":"update:"});
     })
 
 })

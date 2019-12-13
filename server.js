@@ -30,8 +30,27 @@ app.use("/annonce",annonce)
 app.use("/don",don)
 app.use("/auth",user)
 
+app.use(function(req, res, next) {
+    const err = new Error('Not Found');
+    err.status = 404;
+// next(err);
+    res.send({error: 404})
+});
 
+process.on('unhandledRejection', function (err, reason) {
+    console.error(err);
+    console.log("Node NOT Exiting...unhandledRejection", reason);
+    // res.send({msg:500, error:err});
+});
+
+process.on('uncaughtException', function (err, reason) {
+    // console.error(err.stack);
+    console.log("Node NOT Exiting...", reason);
+    console.log("Connected to port 8000")
+    // process.exit(1);
+});
 
 app.listen(8000,function () {
     console.log("Connected to port 8000")
 })
+
