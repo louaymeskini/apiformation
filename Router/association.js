@@ -437,27 +437,38 @@ Router.put("/supp/:id/benevole/:idB",validateUser, function (req, res) {
 //liste of benevole that was accepted and not accepted yet
 Router.get("/all/benevole/:id", validateUser, function (req, res) {
     associationModel.find({_id: req.params.id}).populate('benevoles').select('benevoles').exec(function (errr, result) {
+        var oui = [];
+        var non =[];
         if (errr)
             res.send({"state": "not ok", "msg": "err:" + errr});
         else{
-
-            var oui = result;
-            benevoleModel.find({associations: req.params.id}).exec(function (errr, result2) {
-                if (errr)
-                    res.send({"state": "not ok", "msg": "err:" + errr});
-                else{
-
-                    var non= result2;
-                }
-                for (var x in oui){
-                  non.splice(non.indexOf(x),1);
-                }
-                res.send({"oui" : oui[0].benevoles , "non" : non})
-            })
+            oui = result[0].benevoles;
+            for (var x1 in oui) {}
+                benevoleModel.find({associations: req.params.id}).exec(function (errr, result2) {
+                    if (errr)
+                        res.send({"state": "not ok", "msg": "err:" + errr});
+                    else {
+                        non = result2;
+                        if (result[0].benevoles.length>0) {
+                            for (var x in oui) {
+                                for (var y in non) {
+                                    check = oui[x]._id.toString() == non[y]._id.toString();
+                                    if (check) {
+                                        non.splice(y, 1);
+                                    }
+                                }
+                                // res.send({"oui": oui, "non": non})
+                            }
+                        } else {
+                            // res.send({"oui": oui, "non": non})
+                        }
+                    }
+                })
+            res.send({"oui": oui, "non": non})
         }
     })
-
 })
+
 
 //angular update one association
 Router.put('/modifier/:id/img',validateUser, upload.single("imageAssociation"), function (req, res) {
