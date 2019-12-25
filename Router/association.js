@@ -424,7 +424,7 @@ Router.put("/supp/:id/benevole/:idB",validateUser, function (req, res) {
 
                     }
                     // return res.send(resu.annonces);
-                    benevoleModel.findOneAndUpdate({_id: req.params.idB}, {annonces: resu.annonces}, function (err,resu) {})
+                    benevoleModel.findOneAndUpdate({_id: req.params.idB}, {$pullAll: {annonces: result.annonces}}, function (err,resu) {})
                     //associationModel.save();
                     res.send({"state": "ok", "msg": "supprimer inscription association, supprimer benevole membre:"});
                 }
