@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b4bfcb8-774c-458b-8acc-3dc7c8271e87" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Router/uploads/imagesrd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/init.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    <list default="true" id="2b4bfcb8-774c-458b-8acc-3dc7c8271e87" name="Default" comment="pfa init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,12 +72,24 @@
       <workItem from="1614984048120" duration="2210000" />
       <workItem from="1615073064107" duration="1597000" />
       <workItem from="1615192653069" duration="193000" />
-      <workItem from="1616508480667" duration="1109000" />
+      <workItem from="1616508480667" duration="1724000" />
     </task>
+    <task id="LOCAL-00001" summary="pfa init">
+      <created>1616509601701</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616509601701</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pfa init" />
+    <option name="LAST_COMMIT_MESSAGE" value="pfa init" />
   </component>
   <component name="WindowStateProjectService">
     <state x="535" y="222" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615073469118">
@@ -94,6 +100,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1614979786464" />
+    <state x="-1293" y="120" key="CommitChangelistDialog2" timestamp="1616509600673">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state x="-1293" y="120" key="CommitChangelistDialog2/0.0.1536.824/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1616509600673" />
     <state x="-1828" y="94" width="1736" height="856" key="DiffContextDialog" timestamp="1616509590554">
       <screen x="-1920" y="2" width="1920" height="1040" />
     </state>
@@ -106,5 +116,9 @@
       <screen x="-1920" y="2" width="1920" height="1040" />
     </state>
     <state x="-1133" y="247" key="RollbackChangesDialog/0.0.1536.824/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1616509389374" />
+    <state x="-1368" y="246" key="Vcs.Push.Dialog.v2" timestamp="1616509603638">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="246" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1616509603638" />
   </component>
 </project>
