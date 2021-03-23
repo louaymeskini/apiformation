@@ -2,6 +2,7 @@
 var mongoose = require('mongoose');
 
 //Set up default mongoose connection
+//var mongoDB = 'mongodb://db:27017/backend';
 var mongoDB = 'mongodb://127.0.0.1/backend';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 // Get Mongoose to use the global promise library
