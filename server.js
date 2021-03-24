@@ -2,6 +2,7 @@ var express=require("express")
 var cors=require("cors")
 var fs=require("fs")
 var multer=require("multer")
+const path = require("path")
 var bodyParser = require('body-parser')
 const upload = multer({dest: __dirname + '/uploads/images'});
 
