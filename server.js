@@ -44,12 +44,12 @@ process.on('unhandledRejection', function (err, reason) {
     // res.send({msg:500, error:err});
 });
 
-// process.on('uncaughtException', function (err, reason) {
-//     // console.error(err.stack);
-//     console.log("Node NOT Exiting...", reason);
-//     console.log("Connected to port 8000")
-//     // process.exit(1);
-// });
+process.on('uncaughtException', function (err, reason) {
+    // console.error(err.stack);
+    console.log("Node NOT Exiting...", reason);
+    console.log("Connected to port 8000")
+    // process.exit(1);
+});
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
